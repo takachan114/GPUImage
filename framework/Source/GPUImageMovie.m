@@ -256,7 +256,7 @@
         return;
     }
 
-    __unsafe_unretained GPUImageMovie *weakSelf = self;
+    __weak GPUImageMovie *weakSelf = self;
 
     if (synchronizedMovieWriter != nil)
     {
@@ -636,7 +636,7 @@
     if ([self.delegate respondsToSelector:@selector(didCompletePlayingMovie)]) {
         [self.delegate didCompletePlayingMovie];
     }
-    self.delegate = nil;
+//    self.delegate = nil;
 }
 
 - (void)cancelProcessing
